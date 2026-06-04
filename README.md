@@ -53,3 +53,27 @@ pip3 install Pillow --break-system-packages
 Then verify your camera is detected:
 bashlibcamera-hello
 You should see a preview window open for a few seconds. If that works, you're ready.
+
+
+INSTALLATIONS
+'''
+sudo apt install python3-pyqt5 -y
+'''
+Once done:
+'''
+sudo apt install python3-picamera2 -y
+'''
+Once done:
+'''
+pip3 install opencv-python --break-system-packages
+'''
+Once done:
+'''
+pip3 install Pillow --break-system-packages
+'''
+Then verify all four:
+bashpython3 -c "import PyQt5; print('PyQt5 ok')"
+python3 -c "import picamera2; print('Picamera2 ok')"
+python3 -c "import cv2; print('OpenCV ok')"
+python3 -c "import PIL; print('Pillow ok')"
+Tell me what the four verify lines print.
