@@ -77,3 +77,36 @@ python3 -c "import picamera2; print('Picamera2 ok')"
 python3 -c "import cv2; print('OpenCV ok')"
 python3 -c "import PIL; print('Pillow ok')"
 Tell me what the four verify lines print.
+
+
+
+Classic conflict — 
+OpenCV ships its own broken Qt inside it, and it's clashing with PyQt5. 
+Easy fix:
+```pip3 uninstall opencv-python --break-system-packages -y
+   pip3 install opencv-python-headless --break-system-packages
+```
+The headless version strips out OpenCV's bundled Qt (you don't need it — PyQt5 handles all the display). Then run again:
+```
+python3 phase1_preview.py
+```
+
+
+
+Your code:
+
+Communicates with the Raspberry Pi Camera v2
+Starts the camera
+Configures resolution and image format
+Continuously acquires frames
+Creates a desktop application using PyQt5
+Opens its own window
+Manages UI elements
+Refreshes the display ~30 times per second
+Converts camera data into a displayable image
+Captures raw frames from the camera
+Converts them into Qt images
+Displays them in real time
+Handles resource management
+Starts camera properly
+Stops camera when app closes
